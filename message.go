@@ -15,21 +15,21 @@ type ResponseMessage struct {
 }
 
 // AddMessage permite agregar un mensaje a ResponseMessage
-func (rm *ResponseMessage) AddMessage(c, m, h string) {
+func (rm *ResponseMessage) AddMessage(code, message, href string) {
 	rd := ResponseData{
-		Code:    c,
-		Message: m,
-		Href:    h,
+		Code:    code,
+		Message: message,
+		Href:    href,
 	}
 	rm.Messages = append(rm.Messages, rd)
 }
 
 // AddError permite agregar un error a ResponseMessage
-func (rm *ResponseMessage) AddError(c, m, h string) {
+func (rm *ResponseMessage) AddError(code, message, href string) {
 	rd := ResponseData{
-		Code:    c,
-		Message: m,
-		Href:    h,
+		Code:    code,
+		Message: message,
+		Href:    href,
 	}
 	rm.Errors = append(rm.Errors, rd)
 }
